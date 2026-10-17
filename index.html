@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>Gửi "Các Bạn Nữ 9A3 THCS Trần Phú" 💖</title>
+    <title></title>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@600&family=Be+Vietnam+Pro:wght@300;400;600&display=swap&subset=vietnamese"
       rel="stylesheet"
@@ -105,7 +105,7 @@
         color: #fff;
       }
       .l2 {
-        font-size: clamp(2.6rem, 12vw, 5.8rem);
+        font-size: clamp(2.2rem, 9.5vw, 4.8rem);
         color: var(--pink);
         text-shadow: 0 0 30px var(--rose);
       }
@@ -259,7 +259,7 @@
       }
       .t2 {
         font-family: var(--serif);
-        font-size: clamp(1.7rem, 8vw, 2.4rem);
+        font-size: clamp(1.4rem, 6.5vw, 2.1rem);
         margin: 0 0 0.2rem;
         background: linear-gradient(
           90deg,
@@ -447,15 +447,15 @@
     <div id="stage">
       <div class="line l1" id="l1"></div>
       <div class="line l2" id="l2"></div>
-      <div id="hint">✦ Có một thông điệp đang bay lạc... ✦</div>
+      <div id="hint">✦ Chạm để lắng đọng nhịp đập tri ân... ✦</div>
       <button id="btn">Giải mã 💌</button>
     </div>
 
     <div id="card">
       <div class="box">
-        <span class="badge">20 · 10 &nbsp;Ngày Phụ nữ Việt Nam</span>
+        <span class="badge">Kính dâng người lái đò thầm lặng</span>
         <div class="big">💖</div>
-        <p class="t1">Gửi riêng cho</p>
+        <p class="t1">Gửi trọn tấm lòng kính yêu nhất đến</p>
         <h1 class="t2" id="name"></h1>
         <div class="orn">❀ ❤ ❀</div>
         <div id="msg"></div>
@@ -470,20 +470,20 @@
 
     <script>
       const CFG = {
-        l1: "CHÚC MỪNG 20/10",
-        l2: "Các Bạn Nữ 9A3 THCS Trần Phú",
-        name: "Các Bạn Nữ 9A3 THCS Trần Phú",
+        l1: "TRI ÂN CÔ GIÁO",
+        l2: "Nguyễn Thị Hoa",
+        name: "Nguyễn Thị Hoa",
         intro:
-          "Nhân ngày 20/10, chúc Các Bạn Nữ 9A3 THCS Trần Phú luôn xinh đẹp, rạng rỡ như đóa hồng đầu mùa. Mong mỗi ngày của bạn đều ngập tràn tiếng cười và thật nhiều yêu thương. 🌸",
+          "Giữa những năm tháng thanh xuân đẹp đẽ nhất của tuổi học trò dưới mái trường THCS Trần Phú, thật diệu kỳ khi chúng em được bước vào chuyến đò tri thức do cô giáo Nguyễn Thị Hoa tận tụy chèo lái. Cảm ơn cô đã luôn bao dung, dìu dắt và thắp lửa cho những ước mơ chập chững của chúng em bằng tất cả sự ấm áp và trái tim đong đầy yêu thương. 🌸",
         wishes: [
-          ["🌸", "Luôn xinh đẹp", "Rạng rỡ từ nụ cười đến trái tim."],
-          ["💖", "Thật hạnh phúc", "Mỗi ngày đều có một niềm vui nhỏ."],
-          ["✨", "Bình yên", "Nhẹ nhàng giữa mọi bộn bề."],
-          ["🌹", "Được yêu thương", "Nhiều hơn bạn có thể đếm hết."],
+          ["🌸", "Sức khỏe an khang", "Là cội nguồn bình yên để cô mãi vững bước trên bục giảng."],
+          ["💖", "An nhiên tự tại", "Mong mọi bộn bề đều dừng lại, nhường chỗ cho niềm vui trọn vẹn."],
+          ["✨", "Hạnh phúc đong đầy", "Nụ cười rạng ngời của cô luôn là ánh dương sưởi ấm chúng em."],
+          ["🌹", "Tri ân sâu sắc", "Khắc ghi mãi những bài học làm người và ơn nghĩa ơn sâu nặng."],
         ],
         quote:
-          "Cảm ơn bạn vì đã xuất hiện và làm thế giới này dịu dàng hơn rất nhiều.",
-        sign: "— Một người luôn nghĩ đến bạn 🌹",
+          "Có những người thầy, người cô không chỉ dạy chữ bằng trang sách, mà còn thắp sáng cả một cuộc đời bằng tình thương.",
+        sign: "— Từ tập thể 9A3 THCS Trần Phú với tất cả niềm kính yêu vô bờ 🌹",
       };
       const POOL = "ABCDEFGHIKLMNOPQRSTUVXYĂÂÊÔƠƯ0123456789";
       const rnd = (a) =>
@@ -530,11 +530,9 @@
       total = flyers.length;
 
       function init() {
-        // chữ thật
         flyers.forEach((f) =>
           mk(f, parseFloat(getComputedStyle(f.slot).fontSize)),
         );
-        // chữ gây nhiễu bay lung tung
         for (let i = 0; i < 34; i++) {
           const f = { real: false, c: "", cls: "" };
           flyers.push(f);
@@ -609,7 +607,7 @@
         f.slot.classList.add("ok");
         sparkle(f.slot);
         if (++landed === total) {
-          $("hint").textContent = "Giải mã thành công 💖";
+          $("hint").textContent = "Mùa hoa tri ân nở rộ 💖";
           heartStorm();
           setTimeout(showCard, 1800);
         }
@@ -627,7 +625,7 @@
         if (decoding) return;
         decoding = true;
         $("btn").style.display = "none";
-        $("hint").textContent = "Các chữ cái đang tìm về nhau... ✨";
+        $("hint").textContent = "Những tâm tình đang tụ hội... ✨";
         let i = 0;
         flyers.forEach((f) => {
           if (f.real) {
@@ -750,5 +748,5 @@
         }
       });
     </script>
-    </body>
+</body>
 </html>
